@@ -8,27 +8,30 @@ using namespace stan::math;
 
 
 stan::math::profile_map profiles__;
-static constexpr std::array<const char*, 20> locations_array__ = 
+static constexpr std::array<const char*, 23> locations_array__ = 
 {" (found before start of program)",
- " (in 'C:/Users/Filip/Desktop/DataAnalysis/Data-Analytics/Project/first_fit.stan', line 8, column 4 to column 15)",
- " (in 'C:/Users/Filip/Desktop/DataAnalysis/Data-Analytics/Project/first_fit.stan', line 9, column 4 to column 14)",
- " (in 'C:/Users/Filip/Desktop/DataAnalysis/Data-Analytics/Project/first_fit.stan', line 10, column 4 to column 24)",
- " (in 'C:/Users/Filip/Desktop/DataAnalysis/Data-Analytics/Project/first_fit.stan', line 14, column 3 to column 35)",
- " (in 'C:/Users/Filip/Desktop/DataAnalysis/Data-Analytics/Project/first_fit.stan', line 25, column 4 to column 18)",
- " (in 'C:/Users/Filip/Desktop/DataAnalysis/Data-Analytics/Project/first_fit.stan', line 27, column 8 to column 44)",
- " (in 'C:/Users/Filip/Desktop/DataAnalysis/Data-Analytics/Project/first_fit.stan', line 26, column 19 to line 28, column 5)",
- " (in 'C:/Users/Filip/Desktop/DataAnalysis/Data-Analytics/Project/first_fit.stan', line 26, column 4 to line 28, column 5)",
- " (in 'C:/Users/Filip/Desktop/DataAnalysis/Data-Analytics/Project/first_fit.stan', line 18, column 3 to column 30)",
- " (in 'C:/Users/Filip/Desktop/DataAnalysis/Data-Analytics/Project/first_fit.stan', line 19, column 3 to column 25)",
- " (in 'C:/Users/Filip/Desktop/DataAnalysis/Data-Analytics/Project/first_fit.stan', line 20, column 3 to column 29)",
- " (in 'C:/Users/Filip/Desktop/DataAnalysis/Data-Analytics/Project/first_fit.stan', line 21, column 3 to column 29)",
- " (in 'C:/Users/Filip/Desktop/DataAnalysis/Data-Analytics/Project/first_fit.stan', line 2, column 4 to column 10)",
- " (in 'C:/Users/Filip/Desktop/DataAnalysis/Data-Analytics/Project/first_fit.stan', line 3, column 11 to column 12)",
- " (in 'C:/Users/Filip/Desktop/DataAnalysis/Data-Analytics/Project/first_fit.stan', line 3, column 4 to column 20)",
- " (in 'C:/Users/Filip/Desktop/DataAnalysis/Data-Analytics/Project/first_fit.stan', line 4, column 16 to column 17)",
- " (in 'C:/Users/Filip/Desktop/DataAnalysis/Data-Analytics/Project/first_fit.stan', line 4, column 4 to column 19)",
- " (in 'C:/Users/Filip/Desktop/DataAnalysis/Data-Analytics/Project/first_fit.stan', line 14, column 10 to column 11)",
- " (in 'C:/Users/Filip/Desktop/DataAnalysis/Data-Analytics/Project/first_fit.stan', line 25, column 15 to column 16)"};
+ " (in 'C:/Users/Filip/Desktop/projekt/Projekt/Project/first_fit.stan', line 8, column 4 to column 15)",
+ " (in 'C:/Users/Filip/Desktop/projekt/Projekt/Project/first_fit.stan', line 9, column 4 to column 14)",
+ " (in 'C:/Users/Filip/Desktop/projekt/Projekt/Project/first_fit.stan', line 10, column 4 to column 24)",
+ " (in 'C:/Users/Filip/Desktop/projekt/Projekt/Project/first_fit.stan', line 14, column 3 to column 35)",
+ " (in 'C:/Users/Filip/Desktop/projekt/Projekt/Project/first_fit.stan', line 25, column 4 to column 18)",
+ " (in 'C:/Users/Filip/Desktop/projekt/Projekt/Project/first_fit.stan', line 26, column 4 to column 22)",
+ " (in 'C:/Users/Filip/Desktop/projekt/Projekt/Project/first_fit.stan', line 28, column 8 to column 44)",
+ " (in 'C:/Users/Filip/Desktop/projekt/Projekt/Project/first_fit.stan', line 29, column 8 to column 58)",
+ " (in 'C:/Users/Filip/Desktop/projekt/Projekt/Project/first_fit.stan', line 27, column 19 to line 30, column 5)",
+ " (in 'C:/Users/Filip/Desktop/projekt/Projekt/Project/first_fit.stan', line 27, column 4 to line 30, column 5)",
+ " (in 'C:/Users/Filip/Desktop/projekt/Projekt/Project/first_fit.stan', line 18, column 3 to column 30)",
+ " (in 'C:/Users/Filip/Desktop/projekt/Projekt/Project/first_fit.stan', line 19, column 3 to column 25)",
+ " (in 'C:/Users/Filip/Desktop/projekt/Projekt/Project/first_fit.stan', line 20, column 3 to column 29)",
+ " (in 'C:/Users/Filip/Desktop/projekt/Projekt/Project/first_fit.stan', line 21, column 3 to column 29)",
+ " (in 'C:/Users/Filip/Desktop/projekt/Projekt/Project/first_fit.stan', line 2, column 4 to column 10)",
+ " (in 'C:/Users/Filip/Desktop/projekt/Projekt/Project/first_fit.stan', line 3, column 11 to column 12)",
+ " (in 'C:/Users/Filip/Desktop/projekt/Projekt/Project/first_fit.stan', line 3, column 4 to column 20)",
+ " (in 'C:/Users/Filip/Desktop/projekt/Projekt/Project/first_fit.stan', line 4, column 16 to column 17)",
+ " (in 'C:/Users/Filip/Desktop/projekt/Projekt/Project/first_fit.stan', line 4, column 4 to column 19)",
+ " (in 'C:/Users/Filip/Desktop/projekt/Projekt/Project/first_fit.stan', line 14, column 10 to column 11)",
+ " (in 'C:/Users/Filip/Desktop/projekt/Projekt/Project/first_fit.stan', line 25, column 15 to column 16)",
+ " (in 'C:/Users/Filip/Desktop/projekt/Projekt/Project/first_fit.stan', line 26, column 11 to column 12)"};
 
 
 
@@ -66,17 +69,17 @@ class first_fit_model final : public model_base_crtp<first_fit_model> {
     try {
       int pos__ = std::numeric_limits<int>::min();
       pos__ = 1;
-      current_statement__ = 13;
+      current_statement__ = 15;
       context__.validate_dims("data initialization","N","int",
            std::vector<size_t>{});
       N = std::numeric_limits<int>::min();
       
       
-      current_statement__ = 13;
-      N = context__.vals_i("N")[(1 - 1)];
-      current_statement__ = 14;
-      stan::math::validate_non_negative_index("Miles", "N", N);
       current_statement__ = 15;
+      N = context__.vals_i("N")[(1 - 1)];
+      current_statement__ = 16;
+      stan::math::validate_non_negative_index("Miles", "N", N);
+      current_statement__ = 17;
       context__.validate_dims("data initialization","Miles","double",
            std::vector<size_t>{static_cast<size_t>(N)});
       Miles__ = 
@@ -87,34 +90,36 @@ class first_fit_model final : public model_base_crtp<first_fit_model> {
       
       {
         std::vector<local_scalar_t__> Miles_flat__;
-        current_statement__ = 15;
+        current_statement__ = 17;
         Miles_flat__ = context__.vals_r("Miles");
-        current_statement__ = 15;
+        current_statement__ = 17;
         pos__ = 1;
-        current_statement__ = 15;
+        current_statement__ = 17;
         for (int sym1__ = 1; sym1__ <= N; ++sym1__) {
-          current_statement__ = 15;
+          current_statement__ = 17;
           stan::model::assign(Miles, Miles_flat__[(pos__ - 1)],
             "assigning variable Miles", stan::model::index_uni(sym1__));
-          current_statement__ = 15;
+          current_statement__ = 17;
           pos__ = (pos__ + 1);
         }
       }
-      current_statement__ = 16;
+      current_statement__ = 18;
       stan::math::validate_non_negative_index("deaths", "N", N);
-      current_statement__ = 17;
+      current_statement__ = 19;
       context__.validate_dims("data initialization","deaths","double",
            std::vector<size_t>{static_cast<size_t>(N)});
       deaths = 
         std::vector<double>(N, std::numeric_limits<double>::quiet_NaN());
       
       
-      current_statement__ = 17;
-      deaths = context__.vals_r("deaths");
-      current_statement__ = 18;
-      stan::math::validate_non_negative_index("mu", "N", N);
       current_statement__ = 19;
+      deaths = context__.vals_r("deaths");
+      current_statement__ = 20;
+      stan::math::validate_non_negative_index("mu", "N", N);
+      current_statement__ = 21;
       stan::math::validate_non_negative_index("death", "N", N);
+      current_statement__ = 22;
+      stan::math::validate_non_negative_index("log_lik", "N", N);
     } catch (const std::exception& e) {
       stan::lang::rethrow_located(e, locations_array__[current_statement__]);
     }
@@ -157,13 +162,13 @@ class first_fit_model final : public model_base_crtp<first_fit_model> {
         stan::math::add(stan::math::multiply(Miles, beta), alpha),
         "assigning variable mu");
       {
-        current_statement__ = 9;
-        lp_accum__.add(stan::math::normal_lpdf<propto__>(alpha, 30000, 6000));
-        current_statement__ = 10;
-        lp_accum__.add(stan::math::lognormal_lpdf<propto__>(beta, 0, 1));
         current_statement__ = 11;
-        lp_accum__.add(stan::math::exponential_lpdf<propto__>(sigma, 0.04));
+        lp_accum__.add(stan::math::normal_lpdf<propto__>(alpha, 33000, 6000));
         current_statement__ = 12;
+        lp_accum__.add(stan::math::lognormal_lpdf<propto__>(beta, 0, 1));
+        current_statement__ = 13;
+        lp_accum__.add(stan::math::exponential_lpdf<propto__>(sigma, 0.08));
+        current_statement__ = 14;
         lp_accum__.add(stan::math::normal_lpdf<propto__>(deaths, mu, sigma));
       }
     } catch (const std::exception& e) {
@@ -231,16 +236,26 @@ class first_fit_model final : public model_base_crtp<first_fit_model> {
       } 
       std::vector<double> death =
          std::vector<double>(N, std::numeric_limits<double>::quiet_NaN());
-      current_statement__ = 8;
+      Eigen::Matrix<double, -1, 1> log_lik =
+         Eigen::Matrix<double, -1, 1>::Constant(N,
+           std::numeric_limits<double>::quiet_NaN());
+      current_statement__ = 10;
       for (int i = 1; i <= N; ++i) {
-        current_statement__ = 6;
+        current_statement__ = 7;
         stan::model::assign(death,
           stan::math::normal_rng(
             stan::model::rvalue(mu, "mu", stan::model::index_uni(i)), sigma,
             base_rng__),
           "assigning variable death", stan::model::index_uni(i));
+        current_statement__ = 8;
+        stan::model::assign(log_lik,
+          stan::math::normal_lpdf<false>(
+            stan::model::rvalue(death, "death", stan::model::index_uni(i)),
+            stan::model::rvalue(mu, "mu", stan::model::index_uni(i)), sigma),
+          "assigning variable log_lik", stan::model::index_uni(i));
       }
       out__.write(death);
+      out__.write(log_lik);
     } catch (const std::exception& e) {
       stan::lang::rethrow_located(e, locations_array__[current_statement__]);
     }
@@ -278,7 +293,7 @@ class first_fit_model final : public model_base_crtp<first_fit_model> {
   inline void get_param_names(std::vector<std::string>& names__) const {
     
     names__ = std::vector<std::string>{"alpha", "beta", "sigma", "mu",
-      "death"};
+      "death", "log_lik"};
     
     } // get_param_names() 
     
@@ -286,6 +301,7 @@ class first_fit_model final : public model_base_crtp<first_fit_model> {
     
     dimss__ = std::vector<std::vector<size_t>>{std::vector<size_t>{},
       std::vector<size_t>{}, std::vector<size_t>{},
+      std::vector<size_t>{static_cast<size_t>(N)},
       std::vector<size_t>{static_cast<size_t>(N)},
       std::vector<size_t>{static_cast<size_t>(N)}};
     
@@ -312,6 +328,11 @@ class first_fit_model final : public model_base_crtp<first_fit_model> {
       for (int sym1__ = 1; sym1__ <= N; ++sym1__) {
         {
           param_names__.emplace_back(std::string() + "death" + '.' + std::to_string(sym1__));
+        } 
+      }
+      for (int sym1__ = 1; sym1__ <= N; ++sym1__) {
+        {
+          param_names__.emplace_back(std::string() + "log_lik" + '.' + std::to_string(sym1__));
         } 
       }
     }
@@ -341,19 +362,24 @@ class first_fit_model final : public model_base_crtp<first_fit_model> {
           param_names__.emplace_back(std::string() + "death" + '.' + std::to_string(sym1__));
         } 
       }
+      for (int sym1__ = 1; sym1__ <= N; ++sym1__) {
+        {
+          param_names__.emplace_back(std::string() + "log_lik" + '.' + std::to_string(sym1__));
+        } 
+      }
     }
     
     } // unconstrained_param_names() 
     
   inline std::string get_constrained_sizedtypes() const {
     
-    return std::string("[{\"name\":\"alpha\",\"type\":{\"name\":\"real\"},\"block\":\"parameters\"},{\"name\":\"beta\",\"type\":{\"name\":\"real\"},\"block\":\"parameters\"},{\"name\":\"sigma\",\"type\":{\"name\":\"real\"},\"block\":\"parameters\"},{\"name\":\"mu\",\"type\":{\"name\":\"vector\",\"length\":" + std::to_string(N) + "},\"block\":\"transformed_parameters\"},{\"name\":\"death\",\"type\":{\"name\":\"array\",\"length\":" + std::to_string(N) + ",\"element_type\":{\"name\":\"real\"}},\"block\":\"generated_quantities\"}]");
+    return std::string("[{\"name\":\"alpha\",\"type\":{\"name\":\"real\"},\"block\":\"parameters\"},{\"name\":\"beta\",\"type\":{\"name\":\"real\"},\"block\":\"parameters\"},{\"name\":\"sigma\",\"type\":{\"name\":\"real\"},\"block\":\"parameters\"},{\"name\":\"mu\",\"type\":{\"name\":\"vector\",\"length\":" + std::to_string(N) + "},\"block\":\"transformed_parameters\"},{\"name\":\"death\",\"type\":{\"name\":\"array\",\"length\":" + std::to_string(N) + ",\"element_type\":{\"name\":\"real\"}},\"block\":\"generated_quantities\"},{\"name\":\"log_lik\",\"type\":{\"name\":\"vector\",\"length\":" + std::to_string(N) + "},\"block\":\"generated_quantities\"}]");
     
     } // get_constrained_sizedtypes() 
     
   inline std::string get_unconstrained_sizedtypes() const {
     
-    return std::string("[{\"name\":\"alpha\",\"type\":{\"name\":\"real\"},\"block\":\"parameters\"},{\"name\":\"beta\",\"type\":{\"name\":\"real\"},\"block\":\"parameters\"},{\"name\":\"sigma\",\"type\":{\"name\":\"real\"},\"block\":\"parameters\"},{\"name\":\"mu\",\"type\":{\"name\":\"vector\",\"length\":" + std::to_string(N) + "},\"block\":\"transformed_parameters\"},{\"name\":\"death\",\"type\":{\"name\":\"array\",\"length\":" + std::to_string(N) + ",\"element_type\":{\"name\":\"real\"}},\"block\":\"generated_quantities\"}]");
+    return std::string("[{\"name\":\"alpha\",\"type\":{\"name\":\"real\"},\"block\":\"parameters\"},{\"name\":\"beta\",\"type\":{\"name\":\"real\"},\"block\":\"parameters\"},{\"name\":\"sigma\",\"type\":{\"name\":\"real\"},\"block\":\"parameters\"},{\"name\":\"mu\",\"type\":{\"name\":\"vector\",\"length\":" + std::to_string(N) + "},\"block\":\"transformed_parameters\"},{\"name\":\"death\",\"type\":{\"name\":\"array\",\"length\":" + std::to_string(N) + ",\"element_type\":{\"name\":\"real\"}},\"block\":\"generated_quantities\"},{\"name\":\"log_lik\",\"type\":{\"name\":\"vector\",\"length\":" + std::to_string(N) + "},\"block\":\"generated_quantities\"}]");
     
     } // get_unconstrained_sizedtypes() 
     
@@ -369,7 +395,8 @@ class first_fit_model final : public model_base_crtp<first_fit_model> {
       const size_t num_params__ = 
   ((1 + 1) + 1);
       const size_t num_transformed = N;
-      const size_t num_gen_quantities = N;
+      const size_t num_gen_quantities = 
+  (N + N);
       std::vector<double> vars_vec(num_params__
        + (emit_transformed_parameters * num_transformed)
        + (emit_generated_quantities * num_gen_quantities));
@@ -390,7 +417,8 @@ class first_fit_model final : public model_base_crtp<first_fit_model> {
       const size_t num_params__ = 
   ((1 + 1) + 1);
       const size_t num_transformed = N;
-      const size_t num_gen_quantities = N;
+      const size_t num_gen_quantities = 
+  (N + N);
       vars.resize(num_params__
         + (emit_transformed_parameters * num_transformed)
         + (emit_generated_quantities * num_gen_quantities));
