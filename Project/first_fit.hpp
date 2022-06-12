@@ -17,7 +17,7 @@ static constexpr std::array<const char*, 23> locations_array__ =
  " (in 'C:/Users/Filip/Desktop/projekt/Projekt/Project/first_fit.stan', line 25, column 4 to column 18)",
  " (in 'C:/Users/Filip/Desktop/projekt/Projekt/Project/first_fit.stan', line 26, column 4 to column 22)",
  " (in 'C:/Users/Filip/Desktop/projekt/Projekt/Project/first_fit.stan', line 28, column 8 to column 44)",
- " (in 'C:/Users/Filip/Desktop/projekt/Projekt/Project/first_fit.stan', line 29, column 8 to column 58)",
+ " (in 'C:/Users/Filip/Desktop/projekt/Projekt/Project/first_fit.stan', line 29, column 8 to column 56)",
  " (in 'C:/Users/Filip/Desktop/projekt/Projekt/Project/first_fit.stan', line 27, column 19 to line 30, column 5)",
  " (in 'C:/Users/Filip/Desktop/projekt/Projekt/Project/first_fit.stan', line 27, column 4 to line 30, column 5)",
  " (in 'C:/Users/Filip/Desktop/projekt/Projekt/Project/first_fit.stan', line 18, column 3 to column 30)",
@@ -249,8 +249,7 @@ class first_fit_model final : public model_base_crtp<first_fit_model> {
           "assigning variable death", stan::model::index_uni(i));
         current_statement__ = 8;
         stan::model::assign(log_lik,
-          stan::math::normal_lpdf<false>(
-            stan::model::rvalue(death, "death", stan::model::index_uni(i)),
+          stan::math::normal_lpdf<false>(deaths,
             stan::model::rvalue(mu, "mu", stan::model::index_uni(i)), sigma),
           "assigning variable log_lik", stan::model::index_uni(i));
       }

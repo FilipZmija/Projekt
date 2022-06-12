@@ -26,6 +26,6 @@ generated quantities {
     vector[N] log_lik;
     for (i in 1:N) {
         death[i] = normal_rng(mu[i], sigma);
-        log_lik[i] = normal_lpdf(death[i] | mu[i], sigma);
+        log_lik[i] = normal_lpdf(deaths | mu[i], sigma);
     }
 }   
